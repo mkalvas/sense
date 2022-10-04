@@ -1,0 +1,43 @@
+#background {
+  width: 100%;
+  height: 100%;
+  fill: fb-black;
+}
+
+text {
+  font-size: 32;
+  font-family: System-Regular;
+  font-weight: regular;
+  fill: fb-white;
+}
+
+line.tick {
+  fill: fb-white;
+  stroke-width: 1;
+  x1: 0;
+  x2: 0;
+  y1: -23;
+  y2: -21;
+}
+
+line.tick.major {
+  stroke-width: 2;
+  y2: -18;
+}
+
+#time {
+  text-anchor: middle;
+  text-length: 8;
+}
+
+#date {
+  text-anchor: middle;
+  text-length: 16;
+}
+
+#hrm-text { text-length: 4; }
+#hrm-icon {
+  fill: fb-red;
+  height: 24;
+  width: 24;
+}

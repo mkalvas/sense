@@ -1,0 +1,174 @@
+<!-- 250x250 square from 50–300 with some leeway on sides for rounded bezel -->
+<svg>
+  <defs>
+    <symbol id="mini-clock">
+      <g transform="translate(25,25) rotate(0)">
+        <line class="tick major" />
+      </g>
+      <g transform="translate(25,25) rotate(30)">
+        <line class="tick" />
+      </g>
+      <g transform="translate(25,25) rotate(60)">
+        <line class="tick" />
+      </g>
+      <g transform="translate(25,25) rotate(90)">
+        <line class="tick major" />
+      </g>
+      <g transform="translate(25,25) rotate(120)">
+        <line class="tick" />
+      </g>
+      <g transform="translate(25,25) rotate(150)">
+        <line class="tick" />
+      </g>
+      <g transform="translate(25,25) rotate(180)">
+        <line class="tick major" />
+      </g>
+      <g transform="translate(25,25) rotate(210)">
+        <line class="tick" />
+      </g>
+      <g transform="translate(25,25) rotate(240)">
+        <line class="tick" />
+      </g>
+      <g transform="translate(25,25) rotate(270)">
+        <line class="tick major" />
+      </g>
+      <g transform="translate(25,25) rotate(300)">
+        <line class="tick" />
+      </g>
+      <g transform="translate(25,25) rotate(330)">
+        <line class="tick" />
+      </g>
+      <arc
+        id=""
+        height="50"
+        width="50"
+        fill="fb-white"
+        arc-width="2"
+        start-angle="0"
+        sweep-angle="360"
+      />
+    </symbol>
+    <symbol id="tachymeter" pointer-events="visible" height="50" width="50">
+      <rect height="50" width="50" />
+      <use href="#mini-clock" />
+      <g transform="translate(50%,50%)">
+        <line x1="0" x2="0" y1="0" y2="-23" fill="fb-red" stroke-width="2" />
+        <animateTransform
+          begin="enable"
+          end="disable"
+          attributeName="transform"
+          attributeType="rotate"
+          from="0"
+          to="360"
+          dur="3600s"
+          repeatCount="indefinite"
+        />
+      </g>
+      <g transform="translate(50%,50%)">
+        <line x1="0" x2="0" y1="0" y2="-23" fill="fb-cyan" stroke-width="2" />
+        <animateTransform
+          begin="enable"
+          end="disable"
+          attributeName="transform"
+          attributeType="rotate"
+          from="0"
+          to="360"
+          dur="60s"
+          repeatCount="indefinite"
+        />
+      </g>
+    </symbol>
+    <symbol id="analog-seconds" height="50" width="50">
+      <g id="secondHand" transform="translate(50%,50%)">
+        <g>
+          <line
+            x1="0"
+            x2="0"
+            y1="0"
+            y2="-23"
+            fill="fb-green"
+            stroke-width="2"
+          />
+          <animateTransform
+            begin="enable"
+            attributeType="rotate"
+            from="0"
+            to="360"
+            dur="60s"
+            repeatCount="indefinite"
+          />
+        </g>
+      </g>
+      <circle cx="50%" cy="50%" r="3" fill="fb-white" />
+    </symbol>
+    <symbol id="heart">
+      <g id="heart-beat" transform="translate(50%,50%)">
+        <image
+          id="heart-icon"
+          width="30"
+          height="30"
+          x="-50%"
+          y="-50%"
+          href="images/heart-solid.png"
+        />
+        <animate
+          id="heart-time"
+          attributeName="opacity"
+          begin="enable"
+          end="disable"
+          from="1"
+          to="0.5"
+          dur="1"
+          repeatCount="indefinite"
+          final="restore"
+        />
+      </g>
+      <text x="37" y="24" id="hrm-text" class="p2" />
+    </symbol>
+    <symbol id="cal"></symbol>
+    <symbol id="azm"></symbol>
+    <symbol id="steps"></symbol>
+    <symbol id="floors"></symbol>
+    <symbol id="distance"></symbol>
+    <symbol id="battery" height="48" width="32">
+      <image
+        id="battery-connected"
+        fill="fb-green"
+        x="-70"
+        y="6"
+        width="20"
+        height="20"
+        href="images/active-minutes.png"
+      />
+      <section x="-5" y="0">
+        <g transform="rotate(90)">
+          <image
+            fill="fb-green"
+            id="battery-outline"
+            opacity="1"
+            href="images/battery.png"
+          />
+        </g>
+        <rect
+          id="battery-percent"
+          x="-36"
+          y="10"
+          height="12"
+          width="22"
+          fill="fb-black"
+        />
+      </section>
+      <text x="-8" y="24" id="battery-text" class="p3" text-length="4" />
+    </symbol>
+    <symbol id="water"></symbol>
+  </defs>
+
+  <!-- Watch Face Layout -->
+  <rect id="background" />
+  <text x="50%" y="35" id="date" class="p2">SUN September 30</text>
+  <text x="50%-35" y="110" id="time" class="h1">00:00</text>
+  <use x="50%+75" y="60" id="stopwatch" href="#tachymeter" />
+  <use x="50%+75" y="60" id="seconds" href="#analog-seconds" />
+  <use x="50%+18" y="135" id="battery" href="#battery" />
+  <use x="50" y="185" id="hrm-icon" href="#heart" />
+</svg>

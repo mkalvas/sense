@@ -1,0 +1,31 @@
+{
+  "name": "sense",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fitbit/sdk": "~6.1.0",
+    "@fitbit/sdk-cli": "^1.7.3"
+  },
+  "fitbit": {
+    "appUUID": "cc4cc709-0f31-46f0-88b1-817c852772d3",
+    "appType": "clockface",
+    "appDisplayName": "mk-sense",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ffffff",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate",
+      "access_user_profile"
+    ],
+    "buildTargets": [
+      "vulcan"
+    ],
+    "i18n": {},
+    "defaultLanguage": "en-US"
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
+  }
+}
